@@ -49,6 +49,23 @@ class sshd {
 
 
 class sshd::base {
+    $real_sshd_allowed_users = $sshd_allowed_users ? {
+        '' => '',
+        default => $sshd_allowed_users
+    }
+    $real_sshd_use_pam = $sshd_use_pam ? {
+        '' => 'no',
+        default => $sshd_use_pam
+    }
+    $real_sshd_permit_root_login = $sshd_permit_root_login ? {
+        '' => 'without-password',
+        default => $sshd_permit_root_login
+    }
+    $real_sshd_x11_forwarding = $sshd_x11_forwarding ? {
+        '' => 'no',
+        default => $sshd_x11_forwarding
+    }
+
     file { 'sshd_config':
         path => '/etc/ssh/sshd_config',
         owner => root,

@@ -61,7 +61,7 @@ PermitRootLogin without-password
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-<%- if sshd_password_authentication.to_s == 'yes' then %>
+<%- if real_sshd_password_authentication.to_s == 'yes' then %>
 PasswordAuthentication yes
 <%- else %>
 PasswordAuthentication no
@@ -92,7 +92,7 @@ PasswordAuthentication no
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-<%- if sshd_use_pam.to_s == 'yes' then %>
+<%- if real_sshd_use_pam.to_s == 'yes' then %>
 UsePAM yes
 <%- else %>
 UsePAM no
@@ -100,7 +100,7 @@ UsePAM no
 
 #AllowTcpForwarding yes
 #GatewayPorts no
-<%- if sshd_x11_forwarding.to_s == 'yes' then %>
+<%- if real_sshd_x11_forwarding.to_s == 'yes' then %>
 X11Forwarding yes
 <%- else %>
 X11Forwarding no

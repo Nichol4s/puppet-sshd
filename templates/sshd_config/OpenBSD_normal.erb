@@ -55,7 +55,7 @@ PermitRootLogin without-password
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-<%- if sshd_password_authentication.to_s == 'yes' then %>
+<%- if real_sshd_password_authentication.to_s == 'yes' then %>
 PasswordAuthentication yes
 <%- else %>
 PasswordAuthentication no
@@ -77,7 +77,7 @@ PasswordAuthentication no
 
 #AllowTcpForwarding yes
 #GatewayPorts no
-<%- if sshd_x11_forwarding.to_s == 'yes' then %>
+<%- if real_sshd_x11_forwarding.to_s == 'yes' then %>
 X11Forwarding yes
 <%- else %>
 X11Forwarding no
