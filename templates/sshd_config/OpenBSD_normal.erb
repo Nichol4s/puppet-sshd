@@ -77,7 +77,7 @@ PasswordAuthentication no
 
 #AllowTcpForwarding yes
 #GatewayPorts no
-<%- sshd_x11_forwarding.to_s == 'yes' then %>
+<%- if sshd_x11_forwarding.to_s == 'yes' then %>
 X11Forwarding yes
 <%- else %>
 X11Forwarding no

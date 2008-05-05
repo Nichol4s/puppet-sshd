@@ -104,7 +104,7 @@ AcceptEnv LC_IDENTIFICATION LC_ALL
 #AllowTcpForwarding yes
 #GatewayPorts no
 #X11Forwarding no
-<%- sshd_x11_forwarding.to_s == 'yes' then %>
+<%- if sshd_x11_forwarding.to_s == 'yes' then %>
 X11Forwarding yes
 <%- else %>
 X11Forwarding no

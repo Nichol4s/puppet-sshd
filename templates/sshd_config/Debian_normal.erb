@@ -71,7 +71,7 @@ PasswordAuthentication no
 # Kerberos TGT Passing does only work with the AFS kaserver
 #KerberosTgtPassing yes
 
-<%- sshd_x11_forwarding.to_s == 'yes' then %>
+<%- if sshd_x11_forwarding.to_s == 'yes' then %>
 X11Forwarding yes
 <%- else %>
 X11Forwarding no
