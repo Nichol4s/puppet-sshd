@@ -49,6 +49,7 @@ class sshd {
 
 
 class sshd::base {
+    # prepare variables to use in templates 
     $real_sshd_allowed_users = $sshd_allowed_users ? {
         '' => '',
         default => $sshd_allowed_users
@@ -60,6 +61,10 @@ class sshd::base {
     $real_sshd_permit_root_login = $sshd_permit_root_login ? {
         '' => 'without-password',
         default => $sshd_permit_root_login
+    }
+    $real_sshd_password_authentication = $sshd_password_authentication ? {
+        '' => 'no',
+        default => $sshd_password_authentication
     }
     $real_sshd_x11_forwarding = $sshd_x11_forwarding ? {
         '' => 'no',
