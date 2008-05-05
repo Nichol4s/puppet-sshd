@@ -71,7 +71,7 @@ PasswordAuthentication no
 # Kerberos TGT Passing does only work with the AFS kaserver
 #KerberosTgtPassing yes
 
-<%- sshd_x11_forwarding.to_s == 'yes' then -%>
+<%- sshd_x11_forwarding.to_s == 'yes' then %>
 X11Forwarding yes
 <%- else %>
 X11Forwarding no
@@ -88,7 +88,7 @@ KeepAlive yes
 
 #Subsystem	sftp	/usr/lib/sftp-server
 
-<%- if sshd_use_pam.to_s == 'yes' then -%>
+<%- if sshd_use_pam.to_s == 'yes' then %>
 UsePAM yes
 <%- else %>
 UsePAM no

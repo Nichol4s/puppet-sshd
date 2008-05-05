@@ -92,7 +92,7 @@ PasswordAuthentication no
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-<%- if sshd_use_pam.to_s == 'yes' then -%>
+<%- if sshd_use_pam.to_s == 'yes' then %>
 UsePAM yes
 <%- else %>
 UsePAM no
@@ -100,7 +100,7 @@ UsePAM no
 
 #AllowTcpForwarding yes
 #GatewayPorts no
-<%- sshd_x11_forwarding.to_s == 'yes' then -%>
+<%- sshd_x11_forwarding.to_s == 'yes' then %>
 X11Forwarding yes
 <%- else %>
 X11Forwarding no
